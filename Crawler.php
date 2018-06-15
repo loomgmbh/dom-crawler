@@ -203,7 +203,7 @@ class Crawler implements \Countable, \IteratorAggregate
         restore_error_handler();
 
         if ('' !== trim($content)) {
-            @$dom->loadHTML($content);
+            @$dom->loadHTML($content, LIBXML_HTML_NODEFDTD);
         }
 
         libxml_use_internal_errors($internalErrors);
